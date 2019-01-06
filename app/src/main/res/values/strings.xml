@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">PVL MobApp</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Aufgabenauswahl</string>
+    <string name="nav_header_subtitle">Sick App Skills</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Hey There</string>
+    <string name="shared_input">Input</string>
+    <string name="shared_views">-leer-</string>
+    <string name="shared_button_send">Send</string>
+    <string name="magic_base">Hut mit Android</string>
+    <string name="magic_hide">Nur der Hut</string>
+    <string name="menu_sensor">Sensoren anzeigen</string>
+    <string name="menu_shared">Shared Preferences</string>
+    <string name="menu_magic">Magic Trick</string>
+    <string name="menu_Contacts">Contacts</string>
+    <string name="menu_8">8 Ball</string>
+</resources>
