@@ -58,7 +58,7 @@ class ContactList : AppCompatActivity() {
         }
         provideContent(cList)
     }
-
+    //Benutzt den gleichen RecyclerView wie die Sensoren, was die Liste zum Abstürzen bringt, wenn man Details sehen will, bzw. einen Eintrag berührt.
     private lateinit var recyclerView: RecyclerView
     private lateinit var viewAdapter: RecyclerView.Adapter<*>
     private lateinit var viewManager: RecyclerView.LayoutManager
