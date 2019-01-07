@@ -1,7 +1,6 @@
 package de.hftl.mark.projmobapp
 
 import android.content.Context
-import android.content.Intent
 import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
@@ -10,8 +9,6 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.util.Log
-import android.view.MotionEvent
 
 class ListActivity : AppCompatActivity(), SensorEventListener {
     override fun onSensorChanged(event: SensorEvent?) {
@@ -44,7 +41,6 @@ class ListActivity : AppCompatActivity(), SensorEventListener {
             layoutManager = viewManager
             adapter = viewAdapter
         }
-
     }
 
     override fun onPause() {
