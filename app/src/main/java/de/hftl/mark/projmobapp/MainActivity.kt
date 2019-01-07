@@ -94,12 +94,6 @@ else -> return super.onOptionsItemSelected(item)
                 val intent = Intent(this, BallActivity::class.java)
                 startActivity(intent)
             }
-            R.id.nav_share -> {
-
-            }
-            R.id.nav_send -> {
-
-            }
         }
 
         drawer_layout.closeDrawer(GravityCompat.START)

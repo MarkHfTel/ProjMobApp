@@ -9,8 +9,8 @@ class BallActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ball)
 
-        val wv = findViewById(R.id.wv_ball) as WebView
+        val wv = findViewById<WebView>(R.id.wv_ball)
         wv.settings.javaScriptEnabled = true
-        wv.loadUrl("file:///android_assets/Magic8Ball.html")
+        wv.loadUrl("file:///android_asset/Magic8Ball.html")
     }
 }
