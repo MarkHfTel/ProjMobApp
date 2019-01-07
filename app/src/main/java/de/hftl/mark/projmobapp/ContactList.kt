@@ -7,6 +7,7 @@ import android.provider.ContactsContract
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.widget.SimpleCursorAdapter
 
 private val FROM_COLUMNS: Array<String> = arrayOf(ContactsContract.Contacts.DISPLAY_NAME)
@@ -38,6 +39,7 @@ class ContactList : AppCompatActivity() { //,LoaderManager.LoaderCallbacks<Curso
     }
 
     private fun doIt() {
+        Log.d("YYYY","Contact Part is loading.")
         val cList = ArrayList<String>()
         val mainQueryProjection = arrayOf(ContactsContract.Contacts._ID, ContactsContract.Contacts.DISPLAY_NAME)
         val mainQuerySelection = ContactsContract.Contacts.IN_VISIBLE_GROUP + " = ?"
@@ -49,11 +51,16 @@ class ContactList : AppCompatActivity() { //,LoaderManager.LoaderCallbacks<Curso
             mainQuerySelectionArgs,
             null
         )
+        for (x in mainQueryProjection){
+            Log.d("YYYY","$x")
+        }
+
 
         if (mainQueryCursor != null) {
             while (mainQueryCursor.moveToNext()) {
                 var contactID = mainQueryCursor.getString(0)
                 var displayName = mainQueryCursor.getString(1)
+                Log.d("YYYY","$displayName")
                 cList.add(displayName)
             }
             mainQueryCursor.close()

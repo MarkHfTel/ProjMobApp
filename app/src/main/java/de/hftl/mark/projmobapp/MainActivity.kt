@@ -90,7 +90,9 @@ else -> return super.onOptionsItemSelected(item)
                 startActivity(intent)
             }
             R.id.nav_8 ->{
-
+                Log.d("YYYY","8Ball")
+                val intent = Intent(this, BallActivity::class.java)
+                startActivity(intent)
             }
             R.id.nav_share -> {
 
