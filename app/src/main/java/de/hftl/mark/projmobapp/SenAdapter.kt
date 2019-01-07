@@ -9,11 +9,9 @@ import android.widget.TextView
 
 
 class SenAdapter(private val arrList: ArrayList<String>) : RecyclerView.Adapter<SenAdapter.MyViewHolder>() {
-    //val mContext:Context
     class MyViewHolder(v: View) : RecyclerView.ViewHolder(v) {
         val textView: TextView
 
-        //val intent : Intent = Intent(MainActivity, DetailActivity::class.java)
         init {
             v.setOnClickListener {
                 Log.d("YYYY:", "Ein Element wurde geklickt! $adapterPosition")
