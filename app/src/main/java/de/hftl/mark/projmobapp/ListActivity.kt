@@ -1,22 +1,28 @@
 package de.hftl.mark.projmobapp
 
 import android.content.Context
+import android.content.Intent
 import android.hardware.Sensor
-import android.hardware.SensorEvent
-import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.util.Log
+import android.view.View
 
-class ListActivity : AppCompatActivity(), SensorEventListener {
-    override fun onSensorChanged(event: SensorEvent?) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
+//Funktioniert bis zum Click-Event gut, dann ist glaube ich der Context das Problem, dass die Applikation zum Stehen bringt.
+class ListActivity : AppCompatActivity(), View.OnClickListener {
+    override fun onClick(v: View?) {
+        Log.d("YYYY", "Hallo $v")
     }
-
-    override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    fun onClick(v: View?, pos : Int){
+        Log.d("YYYY", "Hallo $pos")
+        val intent = Intent(this, DetailActivity::class.java)
+        Log.d("YYYY", "Hab ich Context?")
+        intent.putExtra("position", pos)
+        startActivity(intent)
     }
 
     private lateinit var mSensorManager: SensorManager
@@ -43,8 +49,4 @@ class ListActivity : AppCompatActivity(), SensorEventListener {
         }
     }
 
-    override fun onPause() {
-        super.onPause()
-        mSensorManager.unregisterListener(this)
-    }
 }

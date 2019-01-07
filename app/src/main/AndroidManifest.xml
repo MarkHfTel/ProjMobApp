@@ -40,5 +40,9 @@
                   android:parentActivityName=".MainActivity">
 
         </activity>
+        <activity android:name=".DetailActivity"
+                  android:parentActivityName=".ListActivity">
+
+        </activity>
     </application>
 </manifest>
