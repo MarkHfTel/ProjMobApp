@@ -11,7 +11,7 @@ class DetailActivity: AppCompatActivity() {
         //setContentView(R.layout.)
     }
 
-    public fun showDetails(sensors : List<Sensor>, position: Int){
+    fun showDetails(sensors : List<Sensor>, position: Int){
         Log.d("TEST:", "Folgendes wurde geklickt ${sensors.get(position).name}")
     }
 }
