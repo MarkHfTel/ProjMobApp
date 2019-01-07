@@ -13,7 +13,7 @@ class DetailActivity : AppCompatActivity(), SensorEventListener {
 
     //val sensors = mSensorManager.getSensorList()
     override fun onSensorChanged(event: SensorEvent?) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        //Werte auslesen
     }
 
     override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {
