@@ -58,12 +58,13 @@ class ContactList : AppCompatActivity() {
         }
         provideContent(cList)
     }
-    //Benutzt den gleichen RecyclerView wie die Sensoren, was die Liste zum Abstürzen bringt, wenn man Details sehen will, bzw. einen Eintrag berührt.
+    //Benutzt den gleichen RecyclerView wie die Sensoren, was bei der Detailansicht zu unerwarteten Ergebnissen führt(naja es werden halt wieder die Sensordaten angezeigt.)
+    //
     private lateinit var recyclerView: RecyclerView
     private lateinit var viewAdapter: RecyclerView.Adapter<*>
     private lateinit var viewManager: RecyclerView.LayoutManager
     private fun provideContent(cList: ArrayList<String>) {
-        viewAdapter = SenAdapter(cList)
+        viewAdapter = SenAdapter(cList, this)
         viewManager = LinearLayoutManager(this)
         recyclerView = findViewById<RecyclerView>(R.id.recList).apply {
             layoutManager = viewManager

@@ -13,18 +13,7 @@ import android.view.View
 
 
 //Funktioniert bis zum Click-Event gut, dann ist glaube ich der Context das Problem, dass die Applikation zum Stehen bringt.
-class ListActivity : AppCompatActivity(), View.OnClickListener {
-    override fun onClick(v: View?) {
-        Log.d("YYYY", "Hallo $v")
-    }
-    fun onClick(v: View?, pos : Int){
-        Log.d("YYYY", "Hallo $pos")
-        val intent = Intent(this, DetailActivity::class.java)
-        Log.d("YYYY", "Hab ich Context?")
-        intent.putExtra("position", pos)
-        startActivity(intent)
-    }
-
+class ListActivity : AppCompatActivity(){
     private lateinit var mSensorManager: SensorManager
     private lateinit var recyclerView: RecyclerView
     private lateinit var viewAdapter: RecyclerView.Adapter<*>
@@ -41,7 +30,7 @@ class ListActivity : AppCompatActivity(), View.OnClickListener {
             senList.add(x.name)
         }
         viewManager = LinearLayoutManager(this)
-        viewAdapter = SenAdapter(senList)
+        viewAdapter = SenAdapter(senList, this.applicationContext)
 
         recyclerView = findViewById<RecyclerView>(R.id.recList).apply {
             layoutManager = viewManager
