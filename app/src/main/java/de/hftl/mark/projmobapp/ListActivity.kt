@@ -41,6 +41,8 @@ class ListActivity : AppCompatActivity(), SensorEventListener {
             layoutManager = viewManager
             adapter = viewAdapter
         }
+        recyclerView.addOnItemTouchListener(DetailActivity())
+
     }
 
     override fun onPause() {
